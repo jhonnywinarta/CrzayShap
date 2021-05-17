@@ -17,11 +17,11 @@ class GameActivity : AppCompatActivity() {
                 handv.invalidate()
             }
         })
+
         btnHome.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 finish()
             }
-
         })
     }
 }
