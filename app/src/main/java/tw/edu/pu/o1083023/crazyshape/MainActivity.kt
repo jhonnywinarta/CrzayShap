@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         imgNext.setOnLongClickListener(object : View.OnLongClickListener {
             override fun onLongClick(v: View?): Boolean {
-                intent = Intent(this@MainActivity, GameActivity::class.java)
                 startActivity(intent)
                 return true
             }
@@ -42,6 +41,18 @@ class MainActivity : AppCompatActivity() {
             2 -> imgNext.setImageResource(R.drawable.square)
             3 -> imgNext.setImageResource(R.drawable.star)
             4 -> imgNext.setImageResource(R.drawable.triangle)
+        }
+        intent = Intent(this@MainActivity, GameActivity::class.java).apply {
+            putExtra("match",start)
+            if (start == 1) {
+                putExtra("shape", "circle")
+            } else if (start == 2) {
+                putExtra("shape", "square")
+            } else if (start == 3) {
+                putExtra("shape", "star")
+            } else if (start == 4) {
+                putExtra("shape", "triangle")
+            }
         }
     }
 }
