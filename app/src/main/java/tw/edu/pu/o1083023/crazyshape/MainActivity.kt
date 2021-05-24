@@ -20,13 +20,13 @@ class MainActivity : AppCompatActivity() {
             .override(800, 600)
             .into(imgTitle)
 
-        imgNext.setOnClickListener(object :View.OnClickListener{
+        imgNext.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 createShape()
             }
         })
 
-        imgNext.setOnLongClickListener(object: View.OnLongClickListener{
+        imgNext.setOnLongClickListener(object : View.OnLongClickListener {
             override fun onLongClick(v: View?): Boolean {
                 intent = Intent(this@MainActivity, GameActivity::class.java)
                 startActivity(intent)
@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
     fun createShape() {
         val start: Int = (1..4).random()
         when (start) {
@@ -42,4 +43,5 @@ class MainActivity : AppCompatActivity() {
             3 -> imgNext.setImageResource(R.drawable.star)
             4 -> imgNext.setImageResource(R.drawable.triangle)
         }
+    }
 }
